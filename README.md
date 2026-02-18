@@ -50,3 +50,21 @@ photo(z).
 friend_of(x, y). owner_of(y, z).
 access(X, Z) :- user(X), photo(Z), friend_of(X, Y), owner_of(Y, Z).
 ```
+
+## Disscussion
+What about how to deal with "attributes"? It's very common to have attributes. For example, we can have a policy that states:
+- User over 18 can access the website. 
+We can represent this policy as follows:
+```
+user(x).
+age(x, a).
+access(X) :- user(X), age(X, A), A > 18.
+```
+However, this is **not a valid** Datalog clause because of the comparison operator. We can think attributes in relations to represent this policy:
+```
+user(x).
+age(a).
+has_age(X, a) :- user(X), age(a). greater_than(a, 18).
+access(X) :- user(X), has_age(X, a), greater_than(a, 18).
+```
+This way, we can still represent the policy using DatalogIR while handling attributes effectively.
