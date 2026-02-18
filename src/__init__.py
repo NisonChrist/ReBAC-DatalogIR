@@ -1,3 +1,41 @@
-from .IR import DatalogIRToken
+from .IR import (
+    DatalogIRToken,
+    Token,
+    Lexer,
+    LexerError,
+    Parser,
+    SyntaxError,
+    check_syntax,
+    Program,
+    Fact,
+    Rule,
+    Query,
+    Atom,
+    NegatedAtom,
+    Equality,
+    Inequality,
+    Constant,
+    Variable,
+    Wildcard,
+)
 
-__all__ = ["DatalogIRToken"]
+__all__ = [
+    "DatalogIRToken",
+    "Token",
+    "Lexer",
+    "LexerError",
+    "Parser",
+    "SyntaxError",
+    "check_syntax",
+    "Program",
+    "Fact",
+    "Rule",
+    "Query",
+    "Atom",
+    "NegatedAtom",
+    "Equality",
+    "Inequality",
+    "Constant",
+    "Variable",
+    "Wildcard",
+]
