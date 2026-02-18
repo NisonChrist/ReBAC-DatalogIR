@@ -25,10 +25,10 @@ C ∈ Clause ::= A. | A :- φ, ..., φ.
 We can represent a ReBAC policy using DatalogIR: 
 ```json
 {
-    "datalog_subsets": "<Atom>",
-    "datalog_objects": "<Atom>",
-    "datalog_relationships": "<Atom>",
-    "datalog_actions": "<Clause>"
+    "datalog_subsets": "<Atoms>",
+    "datalog_objects": "<Atoms>",
+    "datalog_relationships": "<Atoms/Clauses>",
+    "datalog_actions": "<Clauses>"
 }
 ```
 
