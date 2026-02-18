@@ -7,13 +7,13 @@
 Support for constants, variables, predicate symbols, terms, atoms, premises, and clauses. The syntax is defined as follows:
 
 $$
-a ∈ Const \\
-X ∈ Var \\
-p ∈ PredicateSym \\
-t ∈ Term ::= a | X \\
-A ∈ Atom ::= p | p(t, ..., t) \\
-φ ∈ Premise ::= A | not A | t = t | t != t \\
-C ∈ Clause ::= A. | A :- φ, ..., φ. \\
+a ∈ Const \
+X ∈ Var \
+p ∈ PredicateSym \
+t ∈ Term ::= a | X \
+A ∈ Atom ::= p | p(t, ..., t) \
+φ ∈ Premise ::= A | not A | t = t | t != t \
+C ∈ Clause ::= A. | A :- φ, ..., φ. \
 $$
 
 ## Case Study: ReBAC Policy
