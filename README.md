@@ -21,19 +21,32 @@ A ∈ Atom ::= p | p(t, ..., t)
 C ∈ Clause ::= A. | A :- φ, ..., φ. 
 
 ## Case Study: ReBAC Policy
+
+We can represent a ReBAC policy using DatalogIR: 
+```json
+{
+    "datalog_subsets": "<Atom>",
+    "datalog_objects": "<Atom>",
+    "datalog_relationships": "<Atom>",
+    "datalog_actions": "<Clause>"
+}
+```
+
 Consider a ReBAC policy that defines access control based on relationships between users and resources. For example, we can have a policy that states:
 - A github user can access a repo if he/she is the owner of the repo.
+
 ```
 github_user(x).
 repo(y).
 owner_of(x, y).
 access(X, Y) :- github_user(X), repo(Y), owner_of(X, Y).
 ```
+
 - A user can access the photo if he/she is a friend of the owner of the photo.
+
 ```
 user(x).user(y).
 photo(z).
-friend_of(x, y).
-owner_of(y, z).
+friend_of(x, y). owner_of(y, z).
 access(X, Z) :- user(X), photo(Z), friend_of(X, Y), owner_of(Y, Z).
 ```
